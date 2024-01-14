@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunardo Cinema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title-container">
+            <img src="cinema-logo-nobackground.png" alt="Lunardo Cinema Logo">
+            <h1>Lunardo Cinema</h1>
+        </div>
+        
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#seats-prices">Seats & Prices</a></li>
+            <li><a href="#now-showing">Now Showing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>The cinema has reopened after extensive improvements and renovations. Experience our new standard and reclinable first-class seats, alongside upgraded 3D Dolby Vision projection and Dolby Atmos sound.</p>
+        </section>
+        <section id="seats-prices">
+            <h2>Seats and Prices</h2>
+            <div class="seating-images image-blurred-edge">
+                <img src="standard-seating.jpg" alt="Standard Seating">
+                <img src="first-class-seating.jpg" alt="First Class Seating">
+            </div>
+            <table class="prices-table">
+                <thead>
+                    <tr>
+                        <th>Seat Type</th>
+                        <th>Seat Code</th>
+                        <th>Discounted Prices</th>
+                        <th>Normal Prices</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standard Adult</td>
+                        <td>STA</td>
+                        <td>$16.00</td>
+                        <td>$21.50</td>
+                    </tr>
+                    <tr>
+                        <td>Standard Concession</td>
+                        <td>STP</td>
+                        <td>$14.50</td>
+                        <td>$19.00</td>
+                    </tr>
+                    <tr>
+                        <td>Standard Child</td>
+                        <td>STC</td>
+                        <td>$13.00</td>
+                        <td>$17.50</td>
+                    </tr>
+                    <tr>
+                        <td>First Class Adult</td>
+                        <td>FCA</td>
+                        <td>$25.00</td>
+                        <td>$31.00</td>
+                    </tr>
+                    <tr>
+                        <td>First Class Concession</td>
+                        <td>FCP</td>
+                        <td>$23.50</td>
+                        <td>$28.00</td>
+                    </tr>
+                    <tr>
+                        <td>First Class Child</td>
+                        <td>FCC</td>
+                        <td>$22.00</td>
+                        <td>$25.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="now-showing">
+            <h2>Now Showing</h2>
+        
+            <!-- Napoleon -->
+            <div class="movie-panel" tabindex="0">
+                <div class="panel-front">
+                    <img src="napoleon-poster.jpg" alt="Napoleon Poster">
+                    <div class="movie-info">
+                        <h3>Napoleon</h3>
+                        <p>Rated R for strong violence, some grisly images, sexual content and brief language</p>
+                    </div>
+                </div>
+                <div class="panel-back">
+                    <p>A gripping drama set in the heart of historical events.</p>
+                    <ul>
+                        <li>Mon - Tue: 9pm</li>
+                        <li>Wed - Fri: 9pm</li>
+                        <li>Sat - Sun: 6pm</li>
+                    </ul>
+                    <a href="booking.php?movie=DRM" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
+        
+            <!-- Cat Person -->
+            <div class="movie-panel" tabindex="0">
+                <div class="panel-front">
+                    <img src="catperson-poster.jpg" alt="Cat Person Poster">
+                    <div class="movie-info">
+                        <h3>Cat Person</h3>
+                        <p>Rated R for sexual content, violence and language.</p>
+                    </div>
+                </div>
+                <div class="panel-back">
+                    <p>An intriguing romance exploring modern relationships.</p>
+                    <ul>
+                        <li>Wed - Fri: 12pm</li>
+                        <li>Sat - Sun: 3pm</li>
+                    </ul>
+                    <a href="booking.php?movie=RMT" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
+        
+            <!-- Wonka -->
+            <div class="movie-panel" tabindex="0">
+                <div class="panel-front">
+                    <img src="wonka-poster.jpg" alt="Wonka Poster">
+                    <div class="movie-info">
+                        <h3>Wonka</h3>
+                        <p>Rated PG for some violence, mild language and thematic elements.</p>
+                    </div>
+                </div>
+                <div class="panel-back">
+                    <p>A whimsical journey into a world of pure imagination.</p>
+                    <ul>
+                        <li>Mon: 12pm</li>
+                        <li>Wed - Fri: 6pm</li>
+                        <li>Sat - Sun: 12pm</li>
+                    </ul>
+                    <a href="booking.php?movie=FAM" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
+        
+            <!-- Godzilla Minus One -->
+            <div class="movie-panel" tabindex="0">
+                <div class="panel-front">
+                    <img src="godzilla-minusone-poster.jpg" alt="Godzilla Minus One Poster">
+                    <div class="movie-info">
+                        <h3>Godzilla Minus One</h3>
+                        <p>Rated PG-13 for creature violence and action.</p>
+                    </div>
+                </div>
+                <div class="panel-back">
+                    <p>An action-packed thriller with breathtaking visuals.</p>
+                    <ul>
+                        <li>Mon - Tue: 6pm</li>
+                        <li>Sat - Sun: 9pm</li>
+                    </ul>
+                    <a href="booking.php?movie=ACT" class="book-now-btn">Book Now</a>
+                </div>
+            </div>
+        </section>        
+        
+    </main>
+    <footer>
+        <p>Contact us at lunardo@cinema.com | (07) 1234 5678</p>
+        <p>123 Cinema Street, Townsville</p>
+        <p>Samuel Smith - S3910951</p>
+        <a href="https://github.com/S3910951/a2">GitHub Repository</a>
+    </footer>
+</body>
+</html>
