@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Condensed&display=swap');
-
+html{scroll-behavior:smooth}
 body {
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #fff1d6;
@@ -10,75 +10,111 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     text-align: center;
     order: -1;
+    
+}
+
+header {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    background-color: #fff1d6;
+}
+
+header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* adjust the top margin based on the navbar's height */
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    display: inline;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 32px;
 }
 
 #now-showing > h2 {
     grid-column: 1 / -1;
     justify-self: start;
 }
-
 nav {
     position: sticky;
-    top: 0;
+    top: -1px;
     width: 100%;
     background-color: #3C3744;
-}
 
-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
     justify-content: center;
+    z-index: 1000;
+    padding-top: 10px;
+      
+}
+
+.nav-curve{
+    overflow: hidden;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px; 
+
+}
+
+.navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #3C3744;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    padding-bottom: 20px;
     
-}
-
-nav li {
-    padding: 10px;
-}
-
-nav a {
+  }
+  
+.navbar li {
+    float: right;
+    vertical-align: middle;
+    backface-visibility: hidden;
+    
+  }
+  
+.navbar li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color: #346A4F;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    backface-visibility: hidden;
+    font-size: large;
+  }
+.nav-title{
+    color: #fff1d6;
 }
-
-nav a:hover,
-nav a:focus {
-    color: #ffcc00;
+.nav-title.is-pinned{
+    color: #fff1d6;
 }
-
-header {
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-header img {
-    vertical-align: middle;
-    margin-right: 15px;
-}
-
-header h1 {
-    display: inline;
-    vertical-align: middle;
-}
+  
+li a:hover {
+    color: #fff1d6;
+  }
 
 section {
-    min-height: 10vh;
+    min-height: 100vh;
 }
 
-
-header img {
-    max-height: 100px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
+.Heading-title{
+    margin-top: 100px;
 }
 
+#about-us{
+    margin-left: 10%;
+    margin-right: 10%;
+}
 #about-us, #seats-prices, #now-showing {
     padding: 20px;
 }
+
 
 #seats-prices img {
     width: 100%;
@@ -127,21 +163,20 @@ header img {
 }
 .movie-panel .front, .movie-panel .back {
     padding: 10px;
-    
 }
 
 .panel-back {
-
     transform: rotateY(180deg);
     background-color: rgba(0, 0, 0, 0.5);
 }
-.panel-back p, ul, li, a{
+.panel-back p, .panel-back ul, .panel-back li, .panel-back a{
 
     margin-left: auto;
     margin-right: auto;
     width: 8em;
     color: white;
     text-align: center;
+    backface-visibility: hidden;
 }
 
 .movie-panel:focus .panel-front {
