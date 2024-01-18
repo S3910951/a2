@@ -9,18 +9,18 @@
     
 </head>
 <body>
-    <header>
+    <header id="head">
         <div class="logo-title-container">
             <img src="logo-board-wide-fade.jpg" alt="Lunardo Cinema Logo">
         </div>
     </header>
     <nav class="navbar nav-curve">
         <ul class="navbar">
-            <li class="navbar" style="float:left"><h1 class="nav-title">Lunardo Cinema</h1></li>
-            <li class="navbar"><a href="#contact">Contact</a></li>
-            <li class="navbar"><a href="#now-showing">Now Showing</a></li>
-            <li class="navbar"><a href="#seats-prices">Seats & Prices</a></li>
-            <li class="navbar"><a href="#about-us">About Us</a></li>
+            <li class="navbar" style="float:left"><a href="#head"><h1 class="nav-title">Lunardo Cinema</h1></a></li>
+            <li class="navbar navbar-buttons"><a href="#contact">Contact</a></li>
+            <li class="navbar navbar-buttons"><a href="#now-showing">Now Showing</a></li>
+            <li class="navbar navbar-buttons"><a href="#seats-prices">Seats & Prices</a></li>
+            <li class="navbar navbar-buttons"><a href="#about-us">About Us</a></li>
         </ul>
     </nav>
     <main>
@@ -34,58 +34,75 @@
         </section>
         <section id="seats-prices">
             <h2 class="Heading-title">Seats and Prices</h2>
-            <div class="seating-images image-blurred-edge">
-                <img src="standard-seating.jpg" alt="Standard Seating">
-                <img src="first-class-seating.jpg" alt="First Class Seating">
-            </div>
-            <table class="prices-table">
-                <thead>
-                    <tr>
-                        <th>Seat Type</th>
-                        <th>Seat Code</th>
-                        <th>Discounted Prices</th>
-                        <th>Normal Prices</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Standard Adult</td>
-                        <td>STA</td>
-                        <td>$16.00</td>
-                        <td>$21.50</td>
-                    </tr>
-                    <tr>
-                        <td>Standard Concession</td>
-                        <td>STP</td>
-                        <td>$14.50</td>
-                        <td>$19.00</td>
-                    </tr>
-                    <tr>
-                        <td>Standard Child</td>
-                        <td>STC</td>
-                        <td>$13.00</td>
-                        <td>$17.50</td>
-                    </tr>
-                    <tr>
-                        <td>First Class Adult</td>
-                        <td>FCA</td>
-                        <td>$25.00</td>
-                        <td>$31.00</td>
-                    </tr>
-                    <tr>
-                        <td>First Class Concession</td>
-                        <td>FCP</td>
-                        <td>$23.50</td>
-                        <td>$28.00</td>
-                    </tr>
-                    <tr>
-                        <td>First Class Child</td>
-                        <td>FCC</td>
-                        <td>$22.00</td>
-                        <td>$25.00</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="seating">
+                <h3>Standard Seating</h3>
+                <div class="side-by-side"> 
+                    <img src="Profern-Standard-Twin.png" alt="Standard Seating">
+                    <table class="prices-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket</th>
+                                <th>Regular Pricing</th>
+                                <th>Discounted Pricing *</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard Adult</td>
+                                <td>$21.50</td>
+                                <td>$16.00</td>
+                            </tr>
+                            <tr>
+                                <td>Standard Concession</td>
+                                <td>$19.00</td>
+                                <td>$14.50</td>
+                            </tr>
+                            <tr>
+                                <td>Standard Child</td>
+                                <td>$17.50</td>
+                                <td>$13.00</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <h3>First Class Seating</h3>
+                <div class="side-by-side">
+                    <img src="Profern-Verona-Twin.png" alt="First Class Seating">
+                    <table class="prices-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket</th>
+                                <th>Regular Pricing</th>
+                                <th>Discounted Pricing *</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>First Class Adult</td>
+                                <td>$31.00</td>
+                                <td>$25.00</td>
+                            </tr>
+                            <tr>
+                                <td>First Class Concession</td>
+                                <td>$28.00</td>
+                                <td>$23.50</td>
+                            </tr>
+                            <tr>
+                                <td>First Class Child</td>
+                                <td>$25.00</td>
+                                <td>$22.00</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <em class="disclaimer">*Discounts apply weekdays after 12pm</em>
+                </div>
+        </div>
+
+            
         </section>
         
         <section id="now-showing">
@@ -96,18 +113,18 @@
                 <div class="panel-front">
                     <img src="napoleon-poster.jpg" alt="Napoleon Poster">
                     <div class="movie-info">
-                        <h3>Napoleon</h3>
+                        <h2>Napoleon</h2>
                         <p>Rated R for strong violence, some grisly images, sexual content and brief language</p>
                     </div>
                 </div>
                 <div class="panel-back">
-                    <p>A gripping drama set in the heart of historical events.</p>
+                    <p>An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.</p>
                     <ul>
                         <li>Mon - Tue: 9pm</li>
                         <li>Wed - Fri: 9pm</li>
                         <li>Sat - Sun: 6pm</li>
                     </ul>
-                    <a href="booking.php?movie=DRM" class="book-now-btn">Book Now</a>
+                    <a class="link-button" href="booking.php?movie=DRM" class="book-now-btn">Book Now</a>
                 </div>
             </div>
         
@@ -116,17 +133,17 @@
                 <div class="panel-front">
                     <img src="catperson-poster.jpg" alt="Cat Person Poster">
                     <div class="movie-info">
-                        <h3>Cat Person</h3>
+                        <h2>Cat Person</h2>
                         <p>Rated R for sexual content, violence and language.</p>
                     </div>
                 </div>
                 <div class="panel-back">
-                    <p>An intriguing romance exploring modern relationships.</p>
+                    <p>When Margot, a college sophomore goes on a date with the older Robert, she finds that IRL Robert doesn't live up to the Robert she has been flirting with over texts. A razor-sharp exploration of the horrors of dating.</p>
                     <ul>
                         <li>Wed - Fri: 12pm</li>
                         <li>Sat - Sun: 3pm</li>
                     </ul>
-                    <a href="booking.php?movie=RMT" class="book-now-btn">Book Now</a>
+                    <a class="link-button" href="booking.php?movie=RMT" class="book-now-btn">Book Now</a>
                 </div>
             </div>
         
@@ -135,18 +152,18 @@
                 <div class="panel-front">
                     <img src="wonka-poster.jpg" alt="Wonka Poster">
                     <div class="movie-info">
-                        <h3>Wonka</h3>
+                        <h2>Wonka</h2>
                         <p>Rated PG for some violence, mild language and thematic elements.</p>
                     </div>
                 </div>
                 <div class="panel-back">
-                    <p>A whimsical journey into a world of pure imagination.</p>
+                    <p>With dreams of opening a shop in a city renowned for its chocolate, a young and poor Willy Wonka discovers that the industry is run by a cartel of greedy chocolatiers.</p>
                     <ul>
                         <li>Mon: 12pm</li>
                         <li>Wed - Fri: 6pm</li>
                         <li>Sat - Sun: 12pm</li>
                     </ul>
-                    <a href="booking.php?movie=FAM" class="book-now-btn">Book Now</a>
+                    <a class="link-button" href="booking.php?movie=FAM" class="book-now-btn">Book Now</a>
                 </div>
             </div>
         
@@ -155,17 +172,17 @@
                 <div class="panel-front">
                     <img src="godzilla-minusone-poster.jpg" alt="Godzilla Minus One Poster">
                     <div class="movie-info">
-                        <h3>Godzilla Minus One</h3>
+                        <h2>Godzilla Minus One</h2>
                         <p>Rated PG-13 for creature violence and action.</p>
                     </div>
                 </div>
                 <div class="panel-back">
-                    <p>An action-packed thriller with breathtaking visuals.</p>
+                    <p>Post war Japan is at its lowest point when a new crisis emerges in the form of a giant monster, baptized in the horrific power of the atomic bomb.</p>
                     <ul>
                         <li>Mon - Tue: 6pm</li>
                         <li>Sat - Sun: 9pm</li>
                     </ul>
-                    <a href="booking.php?movie=ACT" class="book-now-btn">Book Now</a>
+                    <a class="link-button" href="booking.php?movie=ACT" class="book-now-btn">Book Now</a>
                 </div>
             </div>
         </section>        
@@ -174,7 +191,7 @@
     <footer>
         <p>Contact us at lunardo@cinema.com | (07) 1234 5678</p>
         <p>123 Cinema Street, Townsville</p>
-        <p>Samuel Smith - S3910951</p>
+        <i>Samuel Smith - S3910951</i>
         <a href="https://github.com/S3910951/a2">GitHub Repository</a>
     </footer>
     <script type="text/javascript" src="script.js"></script>
