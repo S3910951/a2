@@ -23,7 +23,7 @@ header img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* adjust the top margin based on the navbar's height */
+
     width: 100%;
     height: auto;
 }
@@ -50,7 +50,6 @@ nav {
     margin: 0;
     justify-content: center;
     z-index: 1000;
-    padding-top: 10px;
       
 }
 
@@ -63,12 +62,10 @@ nav {
 
 .navbar ul {
     list-style-type: none;
-    overflow: hidden;
     background-color: #3C3744;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    padding-bottom: 20px;
     
   }
   
@@ -77,9 +74,13 @@ nav {
     vertical-align: middle;
     backface-visibility: hidden;
     
-  }
+}
+.navbar-buttons{
+    margin-top: 20px;
+}
+
   
-.navbar li a {
+.navbar li a{
     display: flex;
     color: white;
     text-align: center;
@@ -88,6 +89,15 @@ nav {
     backface-visibility: hidden;
     font-size: large;
   }
+  .navbar li a h1{
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    backface-visibility: hidden;
+    font-size: larger;
+  }
+
+
 .nav-title{
     color: #fff1d6;
 }
@@ -95,16 +105,29 @@ nav {
     color: #fff1d6;
 }
   
-li a:hover {
+.navbar li a:hover {
     color: #fff1d6;
-  }
+}
+
+
+.link-button{
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    backface-visibility: hidden;
+    justify-content: center;
+    align-items: center;
+}
+  
 
 section {
     min-height: 100vh;
 }
 
 .Heading-title{
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 #about-us{
@@ -121,32 +144,51 @@ section {
     max-width: 400px;
 }
 
-.seating-images img {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px;
+.seating{
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.side-by-side {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: large;
+}
+
+em
+{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .prices-table {
-    width: 100%;
+    width: 30%;
     border-collapse: collapse;
-    margin-top: 20px;
+    
 }
 
 .prices-table th, .prices-table td {
-    border: 1px solid #346A4F;
     padding: 8px;
     text-align: left;
 }
 
+tr:nth-child(even) {background-color: #f2f2f2;}
+
 .movie-panel {
-    border: 2px solid #000;
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 350px;
     overflow: hidden;
     perspective: 1000px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    border-radius: 2px;
 }
 .movie-panel .panel-front, .movie-panel .panel-back {
     position: absolute;
@@ -169,16 +211,32 @@ section {
     transform: rotateY(180deg);
     background-color: rgba(0, 0, 0, 0.5);
 }
-.panel-back p, .panel-back ul, .panel-back li, .panel-back a{
-
+.panel-back p, .panel-back ul, .panel-back li{
     margin-left: auto;
     margin-right: auto;
-    width: 8em;
+    justify-content: center;
+    width: 15em;
     color: white;
     text-align: center;
     backface-visibility: hidden;
+    padding-bottom: 10px;
 }
 
+.panel-back a{
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: center;
+    width: 15em;
+    color: white;
+    text-align: center;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.panel-back li{
+    list-style: none;
+    font-style: italic;
+}
 .movie-panel:focus .panel-front {
     transform: rotateY(-180deg);
 }
@@ -189,8 +247,8 @@ section {
 
 .movie-panel .panel-front {
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 350px;
     overflow: hidden;
 
     margin-bottom: 20px;
@@ -227,9 +285,7 @@ footer {
     color: white;
 }
 
-@media (max-width: 600px) {
-    
-}
+
 
 /* Small / Mobile View */
 @media (max-width: 600px) {
@@ -287,13 +343,13 @@ footer {
     #now-showing {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
+        grid-gap: 40px;
         justify-items: center;
         align-items: start;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .movie-panel {
-        width: calc(50% - 20px); 
+        width: calc(100% - 10px); 
         margin: 10px; 
         display: flex; 
         flex-direction: row;
