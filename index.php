@@ -114,7 +114,7 @@
             <!-- Napoleon -->
             <div class="movie-panel" tabindex="0">
                 <div class="panel-front">
-                    <img src="napoleon-poster.jpg" alt="Napoleon Poster">
+                    <img src="napoleon-poster.jpg" alt="Napoleon Poster"><!-- https://www.imdb.com/title/tt13287846/mediaindex -->
                     <div class="movie-info">
                         <h2>Napoleon</h2>
                         <p>Rated R for strong violence, some grisly images, sexual content and brief language</p>
@@ -134,7 +134,7 @@
             <!-- Cat Person -->
             <div class="movie-panel" tabindex="0">
                 <div class="panel-front">
-                    <img src="catperson-poster.jpg" alt="Cat Person Poster">
+                    <img src="catperson-poster.jpg" alt="Cat Person Poster"><!-- https://www.imdb.com/title/tt14647404/ -->
                     <div class="movie-info">
                         <h2>Cat Person</h2>
                         <p>Rated R for sexual content, violence and language.</p>
@@ -153,7 +153,7 @@
             <!-- Wonka -->
             <div class="movie-panel" tabindex="0">
                 <div class="panel-front">
-                    <img src="wonka-poster.jpg" alt="Wonka Poster">
+                    <img src="wonka-poster.jpg" alt="Wonka Poster"><!--  https://www.imdb.com/title/tt6166392/ -->
                     <div class="movie-info">
                         <h2>Wonka</h2>
                         <p>Rated PG for some violence, mild language and thematic elements.</p>
@@ -173,7 +173,7 @@
             <!-- Godzilla Minus One -->
             <div class="movie-panel" tabindex="0">
                 <div class="panel-front">
-                    <img src="godzilla-minusone-poster.jpg" alt="Godzilla Minus One Poster">
+                    <img src="godzilla-minusone-poster.jpg" alt="Godzilla Minus One Poster"><!-- https://www.imdb.com/title/tt23289160/ -->
                     <div class="movie-info">
                         <h2>Godzilla Minus One</h2>
                         <p>Rated PG-13 for creature violence and action.</p>
