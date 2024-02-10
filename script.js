@@ -38,4 +38,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         addCurrentClass(currentSection);
     });
+
+
+    // Select all day and seat dropdown elements
+    const dayDropdowns = document.querySelectorAll('input[name="day"]');
+    const seatDropdowns = document.querySelectorAll('select[name^="seats"]');
+
+    // Function to update the total price
+    function updateTotalPrice() {
+        let pricingPolicy = 'FULL'; // Default pricing policy
+        dayDropdowns.forEach(day => {
+            if (day.checked) {
+                pricingPolicy = day.getAttribute('data-pricing');
+            }
+        });
+
+        let totalPrice = 0;
+        seatDropdowns.forEach(seat => {
+            const seatCount = parseInt(seat.value) || 0;
+            const seatPrice = parseFloat(seat.getAttribute(`data-${pricingPolicy}`)) || 0;
+            totalPrice += seatCount * seatPrice;
+        });
+
+        // Display total price or hide it
+        if (totalPrice > 0) {
+            document.getElementById('totalPrice').textContent = `$${totalPrice.toFixed(2)}`;
+        } else {
+            document.getElementById('totalPrice').textContent = '';
+        }
+
+        // Block or allow form submission
+        document.querySelector('input[type="submit"]').disabled = !(totalPrice > 0);
+    }
+
+    // Attach event listeners to all day and seat selection dropdowns
+    dayDropdowns.forEach(day => day.addEventListener('change', updateTotalPrice));
+    seatDropdowns.forEach(seat => seat.addEventListener('change', updateTotalPrice));
+
+    // Initial calculation in case the form is pre-filled
+    updateTotalPrice();
 });

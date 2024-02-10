@@ -154,6 +154,10 @@
                         <option value="10">10</option>
                     </select>
                 </div>
+
+                <div class="total-price-container">
+                    Total Price: <span id="totalPrice"></span>
+                </div>
                 
                 <!-- Customer Details Fields -->
                 <div class="customer-details">

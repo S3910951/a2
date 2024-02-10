@@ -179,6 +179,12 @@ em
     
 }
 
+.total-price-container {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .prices-table th, .prices-table td {
     padding: 8px;
     text-align: left;
