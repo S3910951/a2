@@ -173,6 +173,8 @@
                         <label for="customerMobile">Mobile Number:</label>
                         <input type="tel" id="customerMobile" name="customer[mobile]" required pattern="04[\d\s]{8,9}" title="Mobile number must start with '04' followed by 8 digits, with optional spaces.">
                     </div>
+                    <label id="rememberMeLabel" for="rememberMe">Remember Me</label>
+                    <input type="checkbox" id="rememberMe" name="rememberMe"/>
                 </div>
 
 

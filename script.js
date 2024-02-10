@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    //NAV HIGHLIGHT
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navbar a");
 
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addCurrentClass(currentSection);
     });
 
-
+    //TOTAL PRICE CALC
     // Select all day and seat dropdown elements
     const dayDropdowns = document.querySelectorAll('input[name="day"]');
     const seatDropdowns = document.querySelectorAll('select[name^="seats"]');
@@ -77,4 +78,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial calculation in case the form is pre-filled
     updateTotalPrice();
+
+    //REMEMBER ME BUTTON
+    const nameInput = document.getElementById('customerName');
+    const emailInput = document.getElementById('customerEmail');
+    const mobileInput = document.getElementById('customerMobile');
+    const rememberMeCheckbox = document.getElementById('rememberMe');
+    const rememberMeLabel = document.getElementById('rememberMeLabel');
+
+    function handleRememberMe() {
+        if (rememberMeCheckbox.checked) {
+            localStorage.setItem('customerName', nameInput.value);
+            localStorage.setItem('customerEmail', emailInput.value);
+            localStorage.setItem('customerMobile', mobileInput.value);
+            rememberMeLabel.textContent = 'Forget Me';
+        } else {
+            localStorage.removeItem('customerName');
+            localStorage.removeItem('customerEmail');
+            localStorage.removeItem('customerMobile');
+            rememberMeLabel.textContent = 'Remember Me';
+        }
+    }
+
+    function loadCustomerDetails() {
+        if (localStorage.getItem('customerName')) {
+            nameInput.value = localStorage.getItem('customerName');
+            emailInput.value = localStorage.getItem('customerEmail');
+            mobileInput.value = localStorage.getItem('customerMobile');
+            rememberMeCheckbox.checked = true;
+            rememberMeLabel.textContent = 'Forget Me';
+        }
+    }
+
+    rememberMeCheckbox.addEventListener('change', handleRememberMe);
+    loadCustomerDetails(); // Load details when the page loads
 });

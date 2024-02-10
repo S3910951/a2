@@ -190,6 +190,22 @@ em
     text-align: left;
 }
 
+#rememberMeLabel {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+#rememberMe {
+    display: none;
+}
+#rememberMe:checked + #rememberMeLabel {
+    background-color: #346A4F;
+    color: white;
+}
+
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 .movie-panel {
