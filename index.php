@@ -1,3 +1,8 @@
+<?php 
+  include('tools.php');
+  include('post-validation.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -200,5 +205,17 @@
         <a href="https://github.com/S3910951/a2">GitHub Repository</a>
         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>
+    <aside id="debug">
+    <hr>
+    <h3>Debug Area</h3>
+    <pre>
+        GET Contains:
+        <?php print_r($_GET); ?>
+        POST Contains:
+        <?php print_r($_POST); ?>
+        SESSION Contains:
+        <?php if (isset($_SESSION)) print_r($_SESSION); ?>
+    </pre>
+</aside>
 </body>
 </html>
