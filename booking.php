@@ -163,16 +163,15 @@
                 <div class="customer-details">
                     <div>
                         <label for="customerName">Full Name:</label>
-                        <input type="text" id="customerName" name="customer[name]" required>
+                        <input type="text" id="customerName" name="customer[name]" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-.'\s]+" title="Name must contain only letters, spaces, hyphens, apostrophes, or dots.">
                     </div>
                     <div>
                         <label for="customerEmail">Email Address:</label>
-                        <input type="email" id="customerEmail" name="customer[email]" required>
+                        <input type="email" id="customerEmail" name="customer[email]" required title="Please enter a valid email address.">
                     </div>
                     <div>
                         <label for="customerMobile">Mobile Number:</label>
-                        <input type="tel" id="customerMobile" name="customer[mobile]" 
-                            pattern="[0-9]{10}" required title="Ten digit mobile number">
+                        <input type="tel" id="customerMobile" name="customer[mobile]" required pattern="04[\d\s]{8,9}" title="Mobile number must start with '04' followed by 8 digits, with optional spaces.">
                     </div>
                 </div>
 
