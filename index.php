@@ -217,5 +217,7 @@
         <?php if (isset($_SESSION)) print_r($_SESSION); ?>
     </pre>
 </aside>
+<script src="script.js"></script>
+</body>
 </body>
 </html>

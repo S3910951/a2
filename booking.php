@@ -1,7 +1,9 @@
 <?php 
-  $title = "Booking";
-  // this helps to eliminate CSS caching issues
-  $lastModTime = filemtime("style.css"); 
+    include('tools.php');
+    include('post-validation.php');
+    $title = "Booking";
+    // this helps to eliminate CSS caching issues
+    $lastModTime = filemtime("style.css"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -198,5 +200,6 @@
     <?php if (isset($_SESSION)) print_r($_SESSION); ?>
         </pre>
     </aside>
+    <script src="script.js"></script>
 </body>
 </html>

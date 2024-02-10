@@ -109,6 +109,11 @@ nav {
     color: #fff1d6;
 }
 
+.nav-current {
+    color: #ffffff !important; 
+    font-weight: bolder;
+}
+
 
 .link-button{
     background-color: #f44336;
@@ -303,13 +308,23 @@ footer {
     border: 0;
 }
 
+.synopsis
+{
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
 .session-label {
     display: inline-block;
     margin: 5px;
     padding: 10px 20px;
     background-color: lightgray;
     border: 2px solid gray;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     cursor: pointer;
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
     width: 30%;
