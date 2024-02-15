@@ -7,6 +7,7 @@
       'rating' => 'PG-13',
       'genre' => 'Action, Adventure, Drama',
       'poster'=> 'godzilla-minusone-poster.jpg',
+      'trailer'=> 'https://www.youtube.com/embed/VvSrHIX5a-0?si=FpBvbT7XZXcuwAOJ',
       'summary' => 'Post war Japan is at its lowest point when a new crisis emerges in the form of a giant monster, baptized in the horrific power of the atomic bomb.',
       'screenings' => [
         'MON' => [
@@ -32,6 +33,7 @@
       'rating' => 'R',
       'genre' => 'Action, Adventure',
       'poster'=> 'napoleon-poster.jpg',
+      'trailer'=> 'https://www.youtube.com/embed/OAZWXUkrjPc',
       'summary' => 'An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.',
       'screenings' => [
         'MON' => [
@@ -68,6 +70,7 @@
     'rating' => 'R',
     'genre' => 'Drama, Horror, Thriller',
     'poster'=> 'catperson-poster.jpg',
+    'trailer'=> 'https://www.youtube.com/embed/ktOBY8aHX2k?si=JoShcJa3CIj6LrTB',
     'summary' => 'When Margot, a college sophomore goes on a date with the older Robert, she finds that IRL Robert doesnt live up to the Robert she has been flirting with over texts. A razor-sharp exploration of the horrors of dating.',
     'screenings' => [
       'WED' => [
@@ -95,6 +98,7 @@
     'rating' => 'PG',
     'genre' => 'Musical, Fantasy',
     'poster'=> 'wonka-poster.jpg',
+    'trailer'=> 'https://www.youtube.com/embed/otNh9bTjXWg?si=wJFN9UF5_w8FEaG3',
     'summary' => 'With dreams of opening a shop in a city renowned for its chocolate, a young and poor Willy Wonka discovers that the industry is run by a cartel of greedy chocolatiers.',
     'screenings' => [
       'MON' => [
@@ -125,13 +129,12 @@
     
   ];
 
-// Function to generate common content, e.g., movie panels
 if (!function_exists('generateMoviePanel')) {
   function generateMoviePanel($movieCode) {
-    global $moviesObject; // Import the global variable into the function's scope
+    global $moviesObject; 
         if (!isset($moviesObject[$movieCode])) {
             echo "Movie code does not exist.";
-            return; // Exit the function if the movie code is not found
+            return; 
         }
     $movie = $moviesObject[$movieCode];
     echo "<div class='movie-panel' tabindex='0'>";
@@ -146,11 +149,10 @@ if (!function_exists('generateMoviePanel')) {
     echo "<p>" . htmlspecialchars($movie['summary']) . "</p>";
     echo "<ul class='screening-times'>";
     foreach ($movie['screenings'] as $day => $screening) {
-        $time = $screening['time']; // Remove last 7 characters
+        $time = $screening['time'];
         echo "<li>" . htmlspecialchars($day) . ": " . htmlspecialchars($time) . "</li>";
     }
     echo "</ul>";
-    // Adjust the href if needed to dynamically reflect the movie
     echo "<div class='booking-button-container'>";
     echo "<a class='link-button book-now-btn' href='booking.php?movie=" . urlencode($movieCode) . "'>BookNow</a>";
     echo "</div>";

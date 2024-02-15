@@ -304,9 +304,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 .booking-button-container {
     position: absolute;
-    bottom: 40px; /* Adjust based on your layout */
-    left: 10px; /* Positions the button to the bottom left */
-    width: auto; /* Adjust as necessary */
+    bottom: 40px; 
+    left: 10px;
+    width: auto; 
 }
 
 .screening-times {

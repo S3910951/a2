@@ -1,15 +1,15 @@
 <?php 
-    include('tools.php');
-    include('post-validation.php');
-    $title = "Booking";
-    // this helps to eliminate CSS caching issues
-    $lastModTime = filemtime("style.css"); 
+include('tools.php');
+$title = "Booking";
+$lastModTime = filemtime("style.css"); 
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        require_once('post-validation.php');
-        $errors = validateBooking();
-        // Handle errors or process data
-    }
+$selectedMovieCode = $_GET['movie'] ?? '';
+$selectedMovie = $moviesObject[$selectedMovieCode] ?? null;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include('post-validation.php');
+    $errors = validateBooking();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +19,6 @@
     <title>Lunardo Cinema</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= $lastModTime ?>">
     <script src='../wireframe.js'></script>
@@ -43,26 +41,30 @@
         <section id="booking-form">
             <h2 class="Heading-title">Book Your Movie Tickets</h2>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OAZWXUkrjPc"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <?php if ($selectedMovie && isset($selectedMovie['trailer'])): ?>
+                <iframe width="560" height="315" src="<?= htmlspecialchars($selectedMovie['trailer']) ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <?php else: ?>
+                <p>Trailer not available.</p>
+                <?php endif; ?>
             </div>
             
             <form action="" method="post" class="movie-form">
                 <div class="synopsis">
-                    <h3>Napoleon</h3>
-                    <p>A look at the military commander's origins and his swift, ruthless climb to emperor, viewed through the prism of his addictive and often volatile relationship with his wife and one true love, Josephine.</p>
+                    <h3><?= htmlspecialchars($selectedMovie['title'] ?? 'Select a Movie') ?></h3>
+                    <p><?= htmlspecialchars($selectedMovie['summary'] ?? '') ?></p>
                 </div>
-                <input type="hidden" name="movie" value="ACT">
+                <input type="hidden" name="movie" value="<?= htmlspecialchars($selectedMovieCode) ?>">
+
 
                 <div class="session-buttons">
-                    <input type="radio" id="monTue" name="day" value="MON_TUE" data-pricing="FULL" hidden>
-                    <label for="monTue" class="session-label">Mon - Tue: 9pm</label>
-        
-                    <input type="radio" id="wedFri" name="day" value="WED_FRI" data-pricing="DISC" hidden>
-                    <label for="wedFri" class="session-label">Wed - Fri: 9pm</label>
-        
-                    <input type="radio" id="satSun" name="day" value="SAT_SUN" data-pricing="FULL" hidden>
-                    <label for="satSun" class="session-label">Sat - Sun: 6pm</label>
+                    <?php if ($selectedMovie): ?>
+                        <?php foreach ($selectedMovie['screenings'] as $day => $screening): ?>
+                            <input type="radio" id="session<?= $day ?>" name="day" value="<?= $day ?>" data-pricing="<?= $screening['price'] ?>" hidden>
+                            <label for="session<?= $day ?>" class="session-label"><?= $day ?>: <?= $screening['time'] ?></label>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
+
                 <div class="seat-selection">
                     <!-- Standard Adult Seats -->
                     <p>Standard Adult Seats</p>

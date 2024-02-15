@@ -3,14 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navbar a");
 
-    // Function to remove 'nav-current' class from all nav links
     function removeCurrentClass() {
         navLinks.forEach(link => {
             link.classList.remove('nav-current');
         });
     }
 
-    // Function to add 'nav-current' class to the active nav link
     function addCurrentClass(id) {
         removeCurrentClass();
         const activeLink = document.querySelector(`.navbar a[href="#${id}"]`);
@@ -47,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to update the total price
     function updateTotalPrice() {
-        let pricingPolicy = 'FULL'; // Default pricing policy
+        let pricingPolicy = 'FULL';
         dayDropdowns.forEach(day => {
             if (day.checked) {
                 pricingPolicy = day.getAttribute('data-pricing');
@@ -111,5 +109,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     rememberMeCheckbox.addEventListener('change', handleRememberMe);
-    loadCustomerDetails(); // Load details when the page loads
+    loadCustomerDetails();
 });
