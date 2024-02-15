@@ -6,9 +6,18 @@ $lastModTime = filemtime("style.css");
 $selectedMovieCode = $_GET['movie'] ?? '';
 $selectedMovie = $moviesObject[$selectedMovieCode] ?? null;
 
+$errors = []; // Initialize errors array
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include('post-validation.php');
     $errors = validateBooking();
+    
+    // If there are no errors, proceed to redirect
+    if (empty($errors)) {
+        $_SESSION['posted_data'] = $_POST;
+        header('Location: receipt.php');
+        exit();
+    }
 }
 ?>
 <!DOCTYPE html>

@@ -19,10 +19,6 @@ function validateBooking() {
   // Validate seat selections
   $seatSelected = false;
   foreach ($_POST['seats'] as $type => $quantity) {
-      if (!is_numeric($quantity) || $quantity < 0 || $quantity > 10) {
-          header('Location: index.php'); 
-          exit();
-      }
       if ($quantity > 0) $seatSelected = true;
   }
   if (!$seatSelected) $errors['seats'] = 'At least one seat must be selected.';
