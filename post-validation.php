@@ -1,5 +1,5 @@
 <?php
-
+include('tools.php');
 /* Call this function in the booking page like so: 
    $fieldErrors = validateBooking();
    If the array is empty, then no errors were generated

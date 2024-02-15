@@ -1,6 +1,6 @@
 <?php 
-  include('tools.php');
-  include('post-validation.php');
+  include_once('tools.php');
+  include_once('post-validation.php');
 ?>
 
 <!DOCTYPE html>
@@ -115,84 +115,9 @@
         
         <section id="now-showing">
             <h2 class="Heading-title">Now Showing</h2>
-        
-            <!-- Napoleon -->
-            <div class="movie-panel" tabindex="0">
-                <div class="panel-front">
-                    <img src="napoleon-poster.jpg" alt="Napoleon Poster"><!-- https://www.imdb.com/title/tt13287846/mediaindex -->
-                    <div class="movie-info">
-                        <h2>Napoleon</h2>
-                        <p>Rated R for strong violence, some grisly images, sexual content and brief language</p>
-                    </div>
-                </div>
-                <div class="panel-back">
-                    <p>An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.</p>
-                    <ul>
-                        <li>Mon - Tue: 9pm</li>
-                        <li>Wed - Fri: 9pm</li>
-                        <li>Sat - Sun: 6pm</li>
-                    </ul>
-                    <a class="link-button book-now-btn" href="booking.php?movie=DRM">Book Now</a>
-                </div>
-            </div>
-        
-            <!-- Cat Person -->
-            <div class="movie-panel" tabindex="0">
-                <div class="panel-front">
-                    <img src="catperson-poster.jpg" alt="Cat Person Poster"><!-- https://www.imdb.com/title/tt14647404/ -->
-                    <div class="movie-info">
-                        <h2>Cat Person</h2>
-                        <p>Rated R for sexual content, violence and language.</p>
-                    </div>
-                </div>
-                <div class="panel-back">
-                    <p>When Margot, a college sophomore goes on a date with the older Robert, she finds that IRL Robert doesn't live up to the Robert she has been flirting with over texts. A razor-sharp exploration of the horrors of dating.</p>
-                    <ul>
-                        <li>Wed - Fri: 12pm</li>
-                        <li>Sat - Sun: 3pm</li>
-                    </ul>
-                    <a class="link-button book-now-btn" href="booking.php?movie=RMT">Book Now</a>
-                </div>
-            </div>
-        
-            <!-- Wonka -->
-            <div class="movie-panel" tabindex="0">
-                <div class="panel-front">
-                    <img src="wonka-poster.jpg" alt="Wonka Poster"><!--  https://www.imdb.com/title/tt6166392/ -->
-                    <div class="movie-info">
-                        <h2>Wonka</h2>
-                        <p>Rated PG for some violence, mild language and thematic elements.</p>
-                    </div>
-                </div>
-                <div class="panel-back">
-                    <p>With dreams of opening a shop in a city renowned for its chocolate, a young and poor Willy Wonka discovers that the industry is run by a cartel of greedy chocolatiers.</p>
-                    <ul>
-                        <li>Mon: 12pm</li>
-                        <li>Wed - Fri: 6pm</li>
-                        <li>Sat - Sun: 12pm</li>
-                    </ul>
-                    <a class="link-button book-now-btn" href="booking.php?movie=FAM">Book Now</a>
-                </div>
-            </div>
-        
-            <!-- Godzilla Minus One -->
-            <div class="movie-panel" tabindex="0">
-                <div class="panel-front">
-                    <img src="godzilla-minusone-poster.jpg" alt="Godzilla Minus One Poster"><!-- https://www.imdb.com/title/tt23289160/ -->
-                    <div class="movie-info">
-                        <h2>Godzilla Minus One</h2>
-                        <p>Rated PG-13 for creature violence and action.</p>
-                    </div>
-                </div>
-                <div class="panel-back">
-                    <p>Post war Japan is at its lowest point when a new crisis emerges in the form of a giant monster, baptized in the horrific power of the atomic bomb.</p>
-                    <ul>
-                        <li>Mon - Tue: 6pm</li>
-                        <li>Sat - Sun: 9pm</li>
-                    </ul>
-                    <a class="link-button book-now-btn" href="booking.php?movie=ACT">Book Now</a>
-                </div>
-            </div>
+            <?php foreach ($moviesObject as $code => $movie): ?>
+                <?php generateMoviePanel($code); ?>
+            <?php endforeach; ?>
         </section>        
         
     </main>

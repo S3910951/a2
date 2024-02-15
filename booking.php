@@ -4,6 +4,12 @@
     $title = "Booking";
     // this helps to eliminate CSS caching issues
     $lastModTime = filemtime("style.css"); 
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        require_once('post-validation.php');
+        $errors = validateBooking();
+        // Handle errors or process data
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
